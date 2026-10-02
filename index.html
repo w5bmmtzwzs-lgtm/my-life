@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Life</title>
+<style>
+body{margin:0;overflow:hidden;font-family:Arial;background:skyblue}
+#game{height:100vh;background:linear-gradient(skyblue 60%,green 60%)}
+#p{position:absolute;bottom:35%;left:50%;font-size:50px}
+#car{position:absolute;bottom:30%;left:70%;font-size:70px}
+#house{position:absolute;bottom:35%;left:15%;font-size:100px}
+#c{position:absolute;bottom:20px;width:100%;text-align:center}
+button{font-size:25px;padding:15px;margin:5px;border-radius:15px}
+</style>
+</head>
+<body>
+<div id="game">
+<div id="house">🏠</div>
+<div id="car">🚙</div>
+<div id="p">🧍</div>
+<div id="c">
+<button onclick="move(-30)">◀</button>
+<button onclick="move(30)">▶</button>
+<button onclick="alert('You are exploring your neighborhood!')">INTERACT</button>
+</div>
+</div>
+<script>
+let x=50;
+function move(n){
+x+=n;
+if(x<10)x=10;
+if(x>90)x=90;
+document.getElementById("p").style.left=x+"%";
+}
+</script>
+</body>
+</html>
